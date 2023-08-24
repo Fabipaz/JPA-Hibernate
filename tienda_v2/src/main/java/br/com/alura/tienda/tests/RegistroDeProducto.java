@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import br.com.alura.tienda.modelo.Categoria;
 import br.com.alura.tienda.modelo.Producto;
 import col.com.alura.dao.ProductoDao;
 import col.com.alura.utils.JPAUtils;
@@ -13,10 +14,8 @@ import col.com.alura.utils.JPAUtils;
 public class RegistroDeProducto {
 
 	public static void main(String[] args) {
-		Producto celular= new Producto();
-		celular.setNombre("Xiaomi Redmi");
-		celular.setDescripcion("Muy Bueno");
-		celular.setPrecio(new BigDecimal("800"));
+		Producto celular = new Producto("Samsung","telefono usado",
+				new BigDecimal("1000"), Categoria.CELULARES);
 
 		
 
