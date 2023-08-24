@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import br.com.alura.tienda.modelo.Producto;
+import col.com.alura.dao.ProductoDao;
 
 public class RegistroDeProducto {
 
@@ -20,8 +21,11 @@ public class RegistroDeProducto {
 		        createEntityManagerFactory("tienda");
 
 	    EntityManager em = factory.createEntityManager();
+	    
+	    ProductoDao productoDao = new ProductoDao(em);
+	    
 	    em.getTransaction().begin();
-	    em.persist(celular);
+	    productoDao.guardar(celular);
 	    em.getTransaction().commit();
 	    em.close();
 	}
