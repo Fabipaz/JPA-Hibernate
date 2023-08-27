@@ -44,6 +44,11 @@ public class RegistroDeProducto {
 	    celulares.setNombre("SOTFWARES");
 	    
 	    em.flush();
+	    em.clear();
+	    
+	    celulares = em.merge(celulares);
+	    em.remove(celulares);
+	    em.flush();
 	}
 
 }
