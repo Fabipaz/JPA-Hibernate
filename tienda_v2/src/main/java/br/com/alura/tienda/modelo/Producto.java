@@ -4,8 +4,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -61,6 +59,14 @@ public class Producto {
 	}
 	public void setPrecio(BigDecimal precio) {
 		this.precio = precio;
+	}
+
+	public LocalDate getFechaDeRegistro() {
+		return fechaDeRegistro;
+	}
+
+	public void setFechaDeRegistro(LocalDate fechaDeRegistro) {
+		this.fechaDeRegistro = fechaDeRegistro;
 	} 
 
 }
